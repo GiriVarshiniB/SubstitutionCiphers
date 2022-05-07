@@ -1,6 +1,10 @@
 # SubstitutionCiphers
-Classical Substitution Ciphers for Encryption and Decryption ​
+Classical Substitution Ciphers for Encryption and Decryption 
+
+
 **Make sure your system is installed with the JDK**
+
+
 After the Github repository is loaded,
 1. Click on the green "Code" Button
 2. Then, choose "Open with GitHub Desktop"
