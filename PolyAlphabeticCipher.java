@@ -1,10 +1,7 @@
-import java.util.Scanner;
-
 public class PolyAlphabeticCipher {
        
     static String decrypt(String ct,String key){
 String pt="";
-//System.out.println("encrypted message="+ct);
 String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 int ctlen=ct.length();
 int keylen=key.length();
@@ -37,7 +34,6 @@ for (int i = 0; i < ct.length(); i++)
 	}
 }
 return pt;
-//System.out.println("decrypted message="+pt);
     }
         
     static String encrypt(String pt, String key)
@@ -75,22 +71,7 @@ for (int i = 0; i < ptlen ; i++)
 	ct += ALPHABET.charAt(cpos);
 	}
 }
-//System.out.println("This is key"+key);
-   //decrypt(ct,key);
+
 return ct;
     }
-    /*
-    public static void main(String[] args) {
-        polyalpha pa = new polyalpha();
-        System.out.println("Enter Plantext : ");
-        Scanner sc = new Scanner(System.in);     
-   String pt=sc.nextLine();
-   System.out.println("Enter Key : ");
-   String key=sc.nextLine();
-        String en = pa.encrypt(pt,key);
-        System.out.println("Encrypted: "+en);
-        String de = pa.decrypt(en, key);
-        System.out.println("Decrypted: "+de);
-   
-    }       */
 }

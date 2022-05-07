@@ -1,7 +1,3 @@
-//String input_text = textField_3.getText();
-//String output_text = playfair.Encript(input_text);
-//textField_4.setText(output_text);
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 
@@ -11,13 +7,10 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import java.awt.event.ActionListener;
 import java.awt.Font;
 import java.awt.Color;
-import javax.swing.border.LineBorder;
 
 public class OneTimePadFrame extends JFrame{
 
@@ -46,13 +39,9 @@ public class OneTimePadFrame extends JFrame{
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public OneTimePadFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 100, 900, 550);
-		//setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		setContentPane(contentPane);

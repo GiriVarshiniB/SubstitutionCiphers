@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 
@@ -8,13 +7,10 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import java.awt.event.ActionListener;
 import java.awt.Font;
 import java.awt.Color;
-import javax.swing.border.LineBorder;
 
 public class MonoAlphabeticFrame extends JFrame {
 
@@ -24,9 +20,6 @@ public class MonoAlphabeticFrame extends JFrame {
 	private JTextField textField_3;
 	private JTextField textField_4;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -41,13 +34,9 @@ public class MonoAlphabeticFrame extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public MonoAlphabeticFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 100, 900, 550);
-		//setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		setContentPane(contentPane);
@@ -86,11 +75,7 @@ public class MonoAlphabeticFrame extends JFrame {
 		
 		JButton Encrypt_Button = new JButton("ENCRYPT");
 		Encrypt_Button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//String input_text = textField_3.getText();
-				//String output_text = MonoalphabeticCipher.doEncryption(input_text);
-				//textField_4.setText(output_text);
-				
+			public void actionPerformed(ActionEvent e) {	
 				String input_text = textField_3.getText();
 				String output_text = MonoAlphabeticCipher.stringEncryption(input_text.toLowerCase());
 				textField_4.setText(output_text);
@@ -106,9 +91,6 @@ public class MonoAlphabeticFrame extends JFrame {
 				String input_text = textField_3.getText();
 				String output_text = MonoAlphabeticCipher.stringDecryption(input_text);
 				textField_4.setText(output_text);
-				//String input_text = textField_3.getText();
-				//String output_text = MonoalphabeticCipher.doDecryption(input_text);
-				//textField_4.setText(output_text);
 			}
 		});
 		Decrypt_Buttton.setFont(new Font("Calibri", Font.BOLD, 24));

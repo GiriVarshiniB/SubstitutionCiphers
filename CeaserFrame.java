@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 
@@ -8,13 +7,10 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import java.awt.event.ActionListener;
 import java.awt.Font;
 import java.awt.Color;
-import javax.swing.border.LineBorder;
 
 public class CeaserFrame extends JFrame {
 
@@ -24,9 +20,7 @@ public class CeaserFrame extends JFrame {
 	private JTextField textField_3;
 	private JTextField textField_4;
 
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -41,13 +35,10 @@ public class CeaserFrame extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public CeaserFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 100, 900, 550);
-		//setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		setContentPane(contentPane);
@@ -108,59 +99,5 @@ public class CeaserFrame extends JFrame {
 		Decrypt_Buttton.setBounds(472, 276, 197, 48);
 		contentPane.add(Decrypt_Buttton);
 		
-
-/*
-		textField = new JTextField();
-		textField.setBounds(26, 82, 243, 27);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		
-		textField_2 = new JTextField();
-		textField_2.setBounds(118, 221, 277, 33);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
-		
-		JButton btnNewButton = new JButton("ENCRYPTION");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String plain_text_input = textField.getText();
-				//MonoalphabeticCipher mc = new MonoalphabeticCipher();
-				String cipher_text_output = MonoalphabeticCipher.doEncryption(plain_text_input);
-				textField_2.setText(cipher_text_output);
-			}
-		});
-		btnNewButton.setBounds(26, 132, 148, 63);
-		contentPane.add(btnNewButton);
-		
-		JButton btnDecryption = new JButton("DECRYPTION");
-		btnDecryption.setBounds(241, 132, 154, 63);
-		contentPane.add(btnDecryption);
-		
-		JLabel lblNewLabel = new JLabel("CEASAR CIPHER");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(81, 20, 281, 35);
-		contentPane.add(lblNewLabel);
-		
-		JTextPane txtpnEnterTheMessage = new JTextPane();
-		txtpnEnterTheMessage.setEditable(false);
-		txtpnEnterTheMessage.setText("Enter the message");
-		txtpnEnterTheMessage.setBounds(26, 51, 113, 20);
-		contentPane.add(txtpnEnterTheMessage);
-		
-		JTextPane txtpnEnterKey = new JTextPane();
-		txtpnEnterKey.setText("Enter Key");
-		txtpnEnterKey.setBounds(316, 51, 79, 20);
-		contentPane.add(txtpnEnterKey);
-		
-		textField_1 = new JTextField();
-		textField_1.setBounds(297, 82, 96, 27);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
-
-		JTextPane txtpnConvertedText = new JTextPane();
-		txtpnConvertedText.setText("Converted Text");
-		txtpnConvertedText.setBounds(26, 221, 82, 33);
-		contentPane.add(txtpnConvertedText);
-		*/
 	}
 }

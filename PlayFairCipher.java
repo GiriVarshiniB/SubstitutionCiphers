@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class PlayFairCipher {
 private static String KeyWord=new String();
 private static String Key=new String();
@@ -34,8 +32,7 @@ KeyWord=K_adjust;
 
 public static void KeyGen()
 {
-// This function adjust the alphabetical letters adding the
-// KeyWord on the beginning of them & then it calls the matrix function
+
     Key=KeyWord;
     for(int i=0;i<26;i++)
     {
@@ -43,7 +40,6 @@ public static void KeyGen()
         char p = (char)('a'+i);
       if(Key.indexOf(p)<0) Key=Key+p;
     }
-//System.out.println(Key);
 matrix ();
 }
 
@@ -74,9 +70,9 @@ len = old_text.length();
 text=old_text;
 text=text.replace('j', 'i');
 len = text.length();
-for (i = 0; i < len-1; i = i + 2) //run for half of string length
+for (i = 0; i < len-1; i = i + 2) 
 {
-if (text.charAt(i+1) == text.charAt(i)) //if char = previous char
+if (text.charAt(i+1) == text.charAt(i)) 
 
  text = text.substring(0, i+1) + 'x' + text.substring(i+1);
 }
@@ -102,7 +98,6 @@ int counter=0;
 for ( int i=0 ; i<size/2 ;i++)
 {
 x[i]=Original.substring(counter, counter+2);
-//System.out.println(x[i]);
 counter=counter+2;
 }
 
@@ -134,7 +129,7 @@ return key;
 
 public static String Encrypt(String Source)
 {
-//System.out.println("Encryption Start");
+
 String src_arr[]=Divid2Pairs(Source);
 String Code=new String();
 char one;
@@ -144,13 +139,13 @@ int part2[]=new int[2];
 
 for (int i=0 ; i< src_arr.length ;i++ )
 {
-one = src_arr[i].charAt(0);//get first char
-two = src_arr[i].charAt(1);//get second char
+one = src_arr[i].charAt(0);
+two = src_arr[i].charAt(1);
 
-part1 = GetDiminsions(one);//get position of the first char
-part2 = GetDiminsions(two);//get position of the second char
+part1 = GetDiminsions(one);
+part2 = GetDiminsions(two);
 
-if(part1[0]==part2[0])//same row
+if(part1[0]==part2[0])
 {
 if (part1[1]<4)
 part1[1]++;
@@ -164,7 +159,7 @@ part2[1]=0;
 
 }
 
-else if (part1[1]==part2[1]) //same column
+else if (part1[1]==part2[1])
 {
 if (part1[0]<4)
 part1[0]++;
@@ -178,7 +173,6 @@ part2[0]=0;
 }
 else
 {
-    //swap columns
 int temp=part1[1];
 part1[1]=part2[1];
 part2[1]=temp;
@@ -186,13 +180,11 @@ part2[1]=temp;
 
 Code= Code + matrix_arr[part1[0]][part1[1]] + matrix_arr[part2[0]][part2[1]];
 }
-//System.out.println(Code);
 return Code;
 }
 
 public static String Decrypt (String Code)
 {
-//System.out.println("Decryption Start");
 
 String Original=new String();
 
@@ -206,13 +198,13 @@ int part2[]=new int[2];
 
 for (int i=0 ; i< src_arr.length ;i++ )
 {
-one = src_arr[i].charAt(0);//get first char
-two = src_arr[i].charAt(1);//get second char
+one = src_arr[i].charAt(0);
+two = src_arr[i].charAt(1);
 
-part1 = GetDiminsions(one);//get position of the first char
-part2 = GetDiminsions(two);//get position of the second char
+part1 = GetDiminsions(one);
+part2 = GetDiminsions(two);
 
-if(part1[0]==part2[0])//same row
+if(part1[0]==part2[0])
 {
 if (part1[1]>0)
 part1[1]--;
@@ -225,7 +217,7 @@ else
 part2[1]=4;
 }
 
-else if (part1[1]==part2[1]) //same column
+else if (part1[1]==part2[1]) 
 {
 if (part1[0]>0)
 part1[0]--;
@@ -245,22 +237,6 @@ part2[1]=temp;
 }
 Original =Original + matrix_arr[part1[0]][part1[1]] + matrix_arr[part2[0]][part2[1]];
 }
-//System.out.println(Original);
 return Original;
 }
-/*
-public static void main(String[] args) {
-
-playfair x=new playfair();
-Scanner sc = new Scanner(System.in);
-System.out.println("Enter a lower case keyword:");
-String keyword = sc.nextLine();
-x.setKey(keyword);
-x.KeyGen();
-System.out.println("Enter a  word to encrypt & decrypt:");
-String key_input = sc.next();
-String Encripted= x.Encript(key_input);
-x.Decript(Encripted);
-}
-*/
 }

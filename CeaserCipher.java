@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class CeaserCipher
 
 {
@@ -47,16 +45,4 @@ public class CeaserCipher
         }
         return plainText;
     }
-    /*
-    public static void main(String[] args)
-    {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the String for Encryption: ");
-        String message = new String();
-        message = sc.next();
-        System.out.println("Encrypted message: " + encrypt(message, 3));
-        System.out.println("Decrypted message: " + decrypt(encrypt(message, 3), 3));
-        sc.close();
-    }
-    */
 }
